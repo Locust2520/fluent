@@ -1,0 +1,72 @@
+<html>
+<head>
+    <title>GPT-3 bot</title>
+    <link rel="icon" href="{{url_for('static', filename='fusee256.png')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+</head>
+<body>
+    <h2>Profil</h2>
+    <div id="profile">
+        <div class="content">
+            <div class="left">
+                <img class="profile-image" src="/static/profiles/profile.jpg">
+            </div>
+            <form id="file_form" action="/upload" method="post" enctype="multipart/form-data">
+                <div class="field">
+                    <span>Nom du bot</span><br>
+                    <input type="text" id="name" name="name" placeholder="Ex: La DRH de Jeanne" value="{{ name }}" style="width: 256px;">
+                </div>
+                <div class="field">
+                    <span>Pseudo dans la conversation (un seul mot si possible)</span><br>
+                    <input type="text" id="nick" name="nick" placeholder="Ex: DRH" value="{{ nick }}" style="width: 128px;">
+                </div>
+                <div class="field">
+                    <span>Contexte (optionnel)</span><br>
+                    <input type="text" id="context" name="context" placeholder="Ex: Jeanne arrive à la fin de son contrat dans une petite entreprise, la DRH veut lui proposer un renouvellement." value="{{ context }}" style="width: 512px;">
+                </div>
+                <div class="field">
+                    <span>Image de profil (laisser vide si inchangé)</span><br>
+                    <input type="file" id="image" name="image" style="margin-top: 16px;" />
+                </div>
+                <input type="submit" class="cbutton" value="Sauvegarder" />
+             </form>
+         </div>
+    </div>
+    
+    <h2>Historique</h2>
+    <div id="history">
+        {% for i, ch in history %}
+            <form class="character" action="/upload" method="post" enctype="multipart/form-data">
+                <input type="hidden" id="name" name="name" value="{{ ch['name'] }}" />
+                <input type="hidden" id="nick" name="nick" value="{{ ch['nick'] }}" />
+                <input type="hidden" id="context" name="context" value="{{ ch['context'] }}" />
+                <input type="file" style="display: none;" id="image" name="image" style="margin-top: 16px;" />
+                <div class="left">
+                    <img class="profile-image" src="/static/profiles/{{ ch['name'] }}.jpg">
+                </div>
+                <div class="middle">
+                    <h3>{{ ch['name'] }}</h3>
+                    <p>{{ ch['context'] }}</p>
+                </div>
+                <div class="right">
+                    <div style="display: flex;">
+                        <input type="submit" class="cbutton" value="Choisir">
+                        <a class="cbutton" style="background: #e66; width: max-content;" href="/delete?index={{ i }}">
+                            <img src="/static/trash.png" style="width: 16px;"/>
+                        </a>
+                    </div>
+                </div>
+            </form>
+        {% endfor %}
+    </div>
+</body>
+
+<script>
+function refreshImage(imgElement, imgURL){    
+    var timestamp = new Date().getTime();
+    var el = document.getElementById(imgElement);
+    var queryString = "?t=" + timestamp;
+    el.src = imgURL + queryString;
+}
+</script>
+</html>

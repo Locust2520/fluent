@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Riemann",
+    "nick": "Riemann",
+    "context": "Riemann est un math\\u00e9maticien remarquable, notamment pour la formulation de son hypoth\\u00e8se. Il est brillamment intelligent."
+  },
+  {
+    "name": "Babar",
+    "nick": "Babar",
+    "context": "Babar est un \\u00e9l\\u00e9phant. C'est aussi un gentil roi."
+  },
+  {
+    "name": "Bob Ross",
+    "nick": "Bob",
+    "context": "Bob est un artiste c\\u00e9l\\u00e8bre pour sa technique de peinture rapide de paysages \\u00e0 la t\\u00e9l\\u00e9vision."
+  }
+]

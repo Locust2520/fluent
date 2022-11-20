@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito:300,600|Roboto:100,300,400,500,700|Roboto+Mono:300&display=swap');
+
+html {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    background-color: #fafafa;
+}
+
+body {
+    margin: 0;
+    position: relative;
+    min-height: 100vh;
+}
+
+h2 {
+    font-weight: 300;
+    font-size: 48px;
+    margin: 64px;
+}
+
+h3 {
+    font-weight: 500;
+    font-size: 24px;
+    margin: 0;
+}
+
+#profile {
+    background : white;
+    padding: 32px;
+    margin: 32px;
+    border-radius: 8px;
+    box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.1);
+}
+
+#profile .content {
+    display: flex;
+}
+
+#profile .left {
+    padding: 48px;
+}
+
+#profile .profile-image {
+    object-fit: cover;
+    width: 256px;
+    height: 256px;
+    border-radius: 50%;
+}
+
+#profile .field {
+    padding: 8px;
+    margin: 8px;
+}
+
+#profile span {
+    font-weight: 300;
+}
+
+input[type=text] {
+    background: #eee;
+    padding: 8px;
+    margin: 4px 0px;
+    height: 36px;
+    border-style: none;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.textlink {
+    color: black;
+    text-decoration: underline dotted 2px;
+}
+
+.textlink:hover {
+    font-weight: bold;
+}
+
+.cbutton {
+    width: 128px;
+    margin: 16px;
+    padding: 16px;
+    border: none;
+    text-align: center;
+    border-radius: 3px;
+    background: #679aec;
+    color: white;
+    box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.cbutton:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.2);
+}
+
+
+/* ~~~~ history ~~~~ */
+
+.character {
+    display: flex;
+    margin: 64px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+}
+
+.character:hover {
+    box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.2);
+}
+
+.character .profile-image {
+    object-fit: cover;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+}
+
+.character .left,
+.character .middle,
+.character .right {
+    padding: 32px;
+}
+
+.character .middle {
+    width: 100%;
+}
+
+.character .left,
+.character .right {
+    display: grid;
+    place-items: center;
+}
