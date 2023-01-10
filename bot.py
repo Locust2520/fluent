@@ -168,7 +168,7 @@ class GPT3Bot(discord.Client):
             # updating conversation history
             if chname not in self.messages:
                 self.messages[chname] = []
-            self.messages[chname] = self.messages[chname][:50]
+            self.messages[chname] = self.messages[chname][-50:]
             history = self.messages[chname]
             history.append(message)
 
